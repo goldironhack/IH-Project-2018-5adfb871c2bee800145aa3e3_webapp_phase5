@@ -1,15 +1,147 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Hello World!</h1>
-        <button id="btn">Click me</button>
-    </div>
-    <script src="index.js"></script>
-</body>
-</html>
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset= "utf-8">
+            <link rel = "stylesheet" href = "style.css">
+            <title>NYCHousing</title>
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans:600i" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+        </head>
+        <body style = "background-color:#172A3A;" onload = "waitLoad()">
+            
+            <div id="load-screen"></div>
+            <div class = "container" id = "max-container">
+                <div class="row">
+                    <div class = "col-md-12">
+
+                        <h1 class ="title" id = "navi">NYC HOUSING</h1>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class = "col-md-12">
+                        <nav class = "navigator" >
+
+                            <a><button type ="button" id="geoButton"  class ="waves-effect waves-light btn">View Districts</button></a>
+                            <a href= "#bottom"><button  type ="button" id ="nhButton" class ="waves-effect waves-light btn">Rank by Distance</button></a>
+                            <a href="#bottom"><button type ="button" id = "afforButton" class ="waves-effect waves-light btn">Rank by Affordability</button></a>
+                            <a><button type ="button"  class ="waves-effect waves-light btn" id = "crimeButton">Rank by Crime Rate</button></a>
+                            <a><button type ="button" id="clearButton"   class ="waves-effect waves-light btn">Clear Markers</button></a>   
+                            <a><button type ="button" id="clearMapButton"   class ="waves-effect waves-light btn">Clear Map</button></a>
+                            
+
+
+                        </nav>
+                    </div>
+                </div>
+                
+                                
+                <div class="row">
+                    <div class = "col-md-12">
+
+                        <nav class = "navigator" id = "naviBar2">
+                            
+                            <a href= "#bottom"><button type ="button"  class ="waves-effect waves-light btn" id ="mn">Manhanttan</button></a>
+                            <a href= "#bottom"><button  type ="button" class ="waves-effect waves-light btn" id = "bk">Brooklyn</button></a>
+                            <a href="#bottom"><button type ="button" class ="waves-effect waves-light btn" id = "bx">Bronx</button></a>
+                            <a href="#bottom"><button type ="button"  class ="waves-effect waves-light btn" id ="qu">Queens</button></a>
+                            <a href="#bottom"><button type ="button" class ="waves-effect waves-light btn" id="st">Staten Island</button></a>   
+                            
+                        </nav>
+
+                    </div>
+                </div>
+                
+                
+                <div class="row">
+                    <div class = "col-md-12">
+
+                        <div id = "info-box"></div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class = "col-md-12">
+                        <div id="mapContainer"></div>
+                    </div>
+                </div>
+                                
+                
+                <div class="row" id = "bottom">
+   
+                        <div class = "col-md-3">
+                            <div class ="navigator2">
+                            <a><button type ="button"  class ="waves-effect waves-light btn" id = "download">Download Table</button></a>
+                            <a href= "#navi"><button type ="button"   class ="waves-effect waves-light btn" id = "up">Go Back to Map</button></a>
+                            </div>
+                        </div>
+                    
+                    
+                    <div class ="col-md-9">
+                        
+                            <div class="scroll">
+                                <table class = "striped" id = "tableChart">
+                                        <tr>
+                                            <th id= "tableHead">
+
+                                            </th>
+                                        </tr>
+                                        <tbody id="tableBody">
+
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </div>
+                    
+  
+                    
+                </div>
+                
+                <div class ="row">
+                    
+                        <div class = "col-md-4">
+                    
+  
+                    
+                        </div>
+                    
+                        
+                                            
+                        <div class ="col-md-8" id = "chartContainer">
+
+                                <svg id = "infoChart">
+
+
+                                </svg>
+
+                        </div>        
+                        
+                </div>   
+                
+
+            </div>
+
+        </body>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <!-- d3.j -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+        <!-- Custom js -->
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+    <script src="https://www.jqueryscript.net/demo/jQuery-Plugin-To-Convert-HTML-Table-To-CSV-tabletoCSV/jquery.tabletoCSV.js"></script>
+        <!-- Google Map -->
+     <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwWYDB9v1MopiTtPpUXMDaCwAlOQbtn3c&libraries=geometry&callback=initMap">
+    </script>
+
+
+    </html>
